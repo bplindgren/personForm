@@ -1,0 +1,40 @@
+h2 {
+  text-align: center;
+  margin-top: 150px;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#person-form {
+  margin: auto;
+  height: 200px;
+  width: 450px;
+  padding: 10px 20px 10px 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+body {
+  background-color: #FFFAFA;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear {
+  clear: right;
+  clear: left;
+}
+
+.button {
+  padding-top: 10px;
+  text-align: center;
+}

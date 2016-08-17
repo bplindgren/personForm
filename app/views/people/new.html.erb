@@ -1,0 +1,39 @@
+<h2>Create a new person</h2>
+
+<div id="person-form">
+  <%= form_for @person, url: { action: "create"} do |f| %>
+    <div class='float-left'>
+      <p>
+        First Name: <%= f.text_field :first_name %>
+      </p>
+      <p>
+        Last Name: <%= f.text_field :last_name %>
+      </p>
+      <p>
+        <span>Gender: </span>
+        <%= f.label :male %>
+        <%= f.radio_button :gender, 'male' %>
+        <%= f.label :female %>
+        <%= f.radio_button :gender, 'female' %>
+      </p>
+    </div>
+    <div class="float-right">
+      <p>
+        Address: <%= f.text_field :address %>
+      </p>
+      <p>
+        City: <%= f.text_field :city %>
+      </p>
+      <p>
+        State: <%= f.collection_select :state, State.all, :name, :name, { :include_blank => true } %>
+      </p>
+    </div>
+    <div class='clear button'>
+      <p>
+        <%= f.submit %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<h4>Total people created: <%= @person_count %></h4>
