@@ -22,16 +22,14 @@
         Address: <%= f.text_field :address %>
       </p>
       <p>
-        City: <%= f.text_field :city %>
+        City: <%= f.text_field :city, :maxlength=>"24" %>
       </p>
       <p>
-        State: <%= f.collection_select :state, State.all, :name, :name, { :include_blank => true } %>
+        State: <%= f.collection_select :state, State.all, :name, :name, { :include_blank => true }, { :style => "width: 150px;" } %>
       </p>
     </div>
     <div class='clear button'>
-      <p>
-        <%= f.submit %>
-      </p>
+      <%= f.submit %>
     </div>
   <% end %>
 </div>

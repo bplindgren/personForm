@@ -10,7 +10,7 @@ h4 {
 
 #person-form {
   margin: auto;
-  height: 200px;
+  height: 160px;
   width: 450px;
   padding: 10px 20px 10px 20px;
   border: 2px solid black;
@@ -37,4 +37,8 @@ body {
 .button {
   padding-top: 10px;
   text-align: center;
+}
+
+.highlight {
+  background-color: #FFFF88;
 }
