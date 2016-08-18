@@ -1,39 +1,35 @@
 <h2>Create a new person</h2>
 
-<div id="person-form">
-  <%= form_for @person, url: { action: "create"} do |f| %>
+<div>
+  <%= form_for(@person, url: { action: "create"}, :html => {:id => "person-form"}) do |f| %>
     <div class='float-left'>
       <p>
-        First Name: <%= f.text_field :first_name %>
+        First Name: <%= f.text_field :first_name, { :required => true } %>
       </p>
       <p>
-        Last Name: <%= f.text_field :last_name %>
+        Last Name: <%= f.text_field :last_name, { :required => true } %>
       </p>
       <p>
-        <span>Gender: </span>
-        <%= f.label :male %>
-        <%= f.radio_button :gender, 'male' %>
-        <%= f.label :female %>
-        <%= f.radio_button :gender, 'female' %>
+        Gender: <%= f.collection_radio_buttons :gender, Gender.all, :gender_type, :gender_type, { :class => "radio" } %>
       </p>
     </div>
     <div class="float-right">
       <p>
-        Address: <%= f.text_field :address %>
+        Address: <%= f.text_field :address, { :required => true } %>
       </p>
       <p>
-        City: <%= f.text_field :city %>
+        City: <%= f.text_field :city, { :maxlength=>"24", :required => true } %>
       </p>
       <p>
-        State: <%= f.collection_select :state, State.all, :name, :name, { :include_blank => true } %>
+        State: <%= f.collection_select :state, State.all, :name, :name, { :required => true }, { :style => "width: 150px;" } %>
       </p>
     </div>
     <div class='clear button'>
-      <p>
-        <%= f.submit %>
-      </p>
+      <%= f.submit "Create Person", { :class => "create" } %>
     </div>
   <% end %>
 </div>
 
-<h4>Total people created: <%= @person_count %></h4>
+<div id="count">
+  <h4>Total people created: <%= @person_count %></h4>
+</div>

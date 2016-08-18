@@ -5,10 +5,12 @@ class PeopleController < ApplicationController
   end
 
   def create
-    p params
     @person = Person.new(person_params)
+    p params
     if @person.save
       redirect_to new_person_path
+    else
+      p 'missing fields'
     end
   end
 
